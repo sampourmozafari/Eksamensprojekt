@@ -2,16 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Vælg din kommune</title>
+    <title>Game of KV17</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="skeleton.css">
-    <link href="select2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="select2.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script type="text/javascript" src="jquery.scrollTo.min.js"></script>
-    <script type="text/javascript" src="jquery.hideseek.min.js"></script>
-    <script src="script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -30,33 +29,98 @@
           </div>
         </div>
         <div class="container">
-          <div class="row centering_hor">
-            <div class="twelve columns centering_hor">
-              <div class="search space_top">
-                <h3 class=" search_title centering_hor">VÆLG DIN KOMMUNE</h3>
-                <!-- <input id="search-hidden-mode" name="search" placeholder="Skriv her" type="text" data-list=".hidden_mode_list" data-nodata="Kommunen kunne ikke findes" autocomplete="off">
-                <ul class="vertical hidden_mode_list">
-                  <li><a href="map2.html">Lyngby-Taarbæk</a></li>
-                  <li><a href="map.html">København</a></li>
-                  <li><a href="#">Frederiksberg</a></li>
-                  <li><a href="#">Rudersdal</a></li>
-                  <li><a href="#">Gentofte</a></li>
-                  <li><a href="#">Herlev</a></li>
-                </ul> -->
-              </div>
-            </div>
-          </div>
           <div class="row">
             <div class="twelve columns centering_hor">
-              <select class="js-example-basic-single search" onchange="location = this.value;">
-                <option value="">Skriv her</option>
-                <option value="map.html">København</option>
-                <option value="map2.html">Lyngby-Taarbæk</option>
-              </select>
+              <h3 class="mapsearch_title">FIND DIN KHAL ELLER KHALEESI</h3>
+            </div>
+          </div>
+            <?php
+              require_once('db_con.php');
+
+              $a1 = filter_input(INPUT_GET, 'a1');
+              $a2 = filter_input(INPUT_GET, 'a2');
+              $a3 = filter_input(INPUT_GET, 'a3');
+              $kom = filter_input(INPUT_GET, 'kom');
+
+              if($a1) {
+                $sql = ('INSERT INTO sporg (kom, answer1, answer2, answer3) VALUES (?,?,?,?)');
+                $stmt = $con->prepare($sql);
+                $stmt->bind_param('siii', $kom, $a1, $a2, $a3);
+
+                $stmt->execute();
+                echo '<div class="twelve columns centering_hor"><p class="indsendt">Dit svar er indsendt.</p></div>';
+                $stmt->close();
+              }
+            ?>
+            <div class="row">
+              <div class="twelve columns centering_hor">
+                <div class="spørgsmål">
+                  <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
+                    <fieldset class="style">
+
+                      <p>Vælg din kommune<p>
+                      <!-- <input id="search-hidden-mode" class="gamesearch" name="kom" placeholder="Skriv her" type="text" data-list=".hidden_mode_list" data-nodata="Kommunen kunne ikke findes" autocomplete="off">
+                      <ul class="vertical hidden_mode_list">
+                        <li><a href="#">Lyngby-Taarbæk</a></li>
+                        <li><a href="#">København</a></li>
+                        <li><a href="#">Frederiksberg</a></li>
+                        <li><a href="#">Rudersdal</a></li>
+                        <li><a href="#">Gentofte</a></li>
+                        <li><a href="#">Hørsholm</a></li>
+                        <li><a href="#">Gladsaxe</a></li>
+                        <li><a href="#">Herlev</a></li>
+                        <li><a href="#">Tårnby</a></li>
+                        <li><a href="#">Dragør</a></li>
+                      </ul> -->
+                      <select class="js-example-basic-single search" name="kom">
+                        <option value="">Skriv her</option>
+                        <option value="København">København</option>
+                        <option value="Lyngby-Taarbæk">Lyngby-Taarbæk</option>
+                      </select>
+                      <div class="row">
+                        <div class="four columns">
+                          <div class="et">
+                            <h3 class="question">Spørgsmål 1</h3>
+                            <input type="radio" name="a1" value="1"> Enig<br>
+                            <input type="radio" name="a1" value="2"> Mindre enig<br>
+                            <input type="radio" name="a1" value="3"> Både og<br>
+                            <input type="radio" name="a1" value="4"> Mindre uenig<br>
+                            <input type="radio" name="a1" value="5"> Uenig<br>
+                          </div>
+                        </div>
+                        <div class="four columns">
+                          <div class="to">
+                            <h3 class="question">Spørgsmål 2</h3>
+                            <input type="radio" name="a2" value="1"> Enig<br>
+                            <input type="radio" name="a2" value="2"> Mindre enig<br>
+                            <input type="radio" name="a2" value="3"> Både og<br>
+                            <input type="radio" name="a2" value="4"> Mindre uenig<br>
+                            <input type="radio" name="a2" value="5"> Uenig<br>
+                          </div>
+                        </div>
+                        <div class="four columns">
+                          <div class="tre">
+                            <h3 class="question">Spørgsmål 3</h3>
+                            <input type="radio" name="a3" value="1"> Enig<br>
+                            <input type="radio" name="a3" value="2"> Mindre enig<br>
+                            <input type="radio" name="a3" value="3"> Både og<br>
+                            <input type="radio" name="a3" value="4"> Mindre uenig<br>
+                            <input type="radio" name="a3" value="5"> Uenig<br>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="twelve columns">
+                          <input id="knap" type="submit" name="submit" value="Afslut">
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </body>
 </html>
