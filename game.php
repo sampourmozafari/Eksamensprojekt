@@ -48,7 +48,7 @@
                 $stmt->bind_param('siii', $kom, $a1, $a2, $a3);
 
                 $stmt->execute();
-                echo '<div class="twelve columns centering_hor"><p class="indsendt">Dit svar er indsendt.</p></div>';
+                echo '<div class="twelve columns centering_hor"><p class="indsendt">Dit svar er indsendt. Du blev denne <a href="bio2.html"> &nbsp <u><b>politiker</b></u></a></p></div>';
                 $stmt->close();
               }
             ?>
