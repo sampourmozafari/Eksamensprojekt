@@ -1,0 +1,368 @@
+@charset "UTF-8";
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Trajan Pro";
+  background-color: #050201;
+  color: #f2f2f2; }
+
+section {
+  height: 100vh; }
+
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%); }
+
+.search {
+  width: 70%; }
+  .search ul li a {
+    font-size: 1.2em; }
+    .search ul li a:hover {
+      opacity: 0.5; }
+
+input[type="text"] {
+  background: transparent;
+  color: #f2f2f2;
+  border: none;
+  border-bottom: .1em solid #f2f2f2;
+  margin-bottom: 10px;
+  text-indent: 1em;
+  width: 100%;
+  border-radius: 0;
+  font-family: "Trajan Pro";
+  font-size: 1.2em; }
+  input[type="text"]:placeholder-shown {
+    font-family: "Trajan Pro";
+    font-size: 1.2em;
+    color: #f2f2f2;
+    opacity: 0.75; }
+  input[type="text"]:focus {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+
+#map .wrapper {
+  background-image: url(Tegn.png);
+  background-position: bottom;
+  background-size: 100%;
+  background-repeat: no-repeat; }
+  #map .wrapper .flex_container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; }
+    #map .wrapper .flex_container .button_container {
+      display: flex;
+      flex-direction: column; }
+
+#info .wrapper {
+  height: 100vh;
+  width: 100vw; }
+  #info .wrapper .flex_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    #info .wrapper .flex_container .content_container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      #info .wrapper .flex_container .content_container p {
+        font-size: 1em; }
+      #info .wrapper .flex_container .content_container #countdown {
+        font-size: 2em; }
+      #info .wrapper .flex_container .content_container .socialmedia_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2em 0; }
+        #info .wrapper .flex_container .content_container .socialmedia_container .icons a {
+          margin: 2em;
+          text-decoration: none; }
+          #info .wrapper .flex_container .content_container .socialmedia_container .icons a svg {
+            opacity: 0.5;
+            border-radius: 1em; }
+            #info .wrapper .flex_container .content_container .socialmedia_container .icons a svg:hover {
+              opacity: 1; }
+
+.wrapper {
+  height: 100vh;
+  width: 100vw; }
+  .wrapper .flex_container .nav_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em; }
+    .wrapper .flex_container .nav_container .logo svg {
+      fill: #f2f2f2; }
+    .wrapper .flex_container .nav_container .nav_links .nav_item {
+      color: #f2f2f2;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 0 .5em 4em; }
+      .wrapper .flex_container .nav_container .nav_links .nav_item:hover {
+        opacity: 0.5; }
+  .wrapper .flex_container .feed_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .wrapper .flex_container .feed_container h1 {
+      font-size: 2em;
+      font-weight: normal;
+      margin: 0; }
+    .wrapper .flex_container .feed_container .twitter-timeline {
+      text-decoration: none;
+      color: #f2f2f2;
+      font-family: "Trajan Pro"; }
+
+h1 {
+  font-weight: normal; }
+
+h3 {
+  font-weight: normal; }
+
+h4 {
+  font-weight: normal; }
+
+h5 {
+  font-weight: normal; }
+
+p {
+  line-height: 2.2; }
+
+a {
+  text-decoration: none;
+  color: #f2f2f2; }
+
+ul {
+  list-style: none; }
+
+li {
+  list-style: none; }
+
+.meter {
+  height: 1.5em;
+  position: relative;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 2em;
+  border-radius: 8px; }
+
+.meter > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: #a71933;
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden; }
+
+.spørgsmål form {
+  display: flex;
+  width: 100%; }
+
+.wrapper .flex_container .container .row .centering_hor {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.wrapper .flex_container .container .row .centering_hor {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.gamebutton {
+  padding: 1em 2em;
+  background-color: rgba(77, 76, 76, 0.5);
+  font-size: 1.3em;
+  text-decoration: none;
+  color: #f2f2f2; }
+  .gamebutton:hover {
+    background-color: rgba(38, 38, 38, 0.5); }
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; }
+
+.margin_bottom {
+  margin-bottom: 1.7em; }
+
+.margin_top {
+  margin-top: 1em; }
+
+.kom_title {
+  font-size: 1.5em; }
+
+.socialmedia_container .socialmedia_text p {
+  font-size: 1.2em; }
+
+.socialmedia_container .icons a {
+  padding: 0 2em;
+  text-decoration: none; }
+  .socialmedia_container .icons a svg {
+    opacity: 0.5;
+    border-radius: 1em; }
+    .socialmedia_container .icons a svg:hover {
+      opacity: 1; }
+
+.centering_ver {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+#countdown {
+  font-size: 2em; }
+
+.search_title {
+  font-size: 1.5em; }
+
+.newsfeed_title {
+  font-size: 1.5em; }
+
+.scroll_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .scroll_container .scroll {
+    position: absolute;
+    bottom: 0; }
+    .scroll_container .scroll p {
+      font-size: 1em;
+      background-color: rgba(77, 76, 76, 0.5);
+      padding: 0.5em 2em;
+      margin: 0; }
+    .scroll_container .scroll a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2em 0;
+      -webkit-animation: jump 1.5s ease 0s infinite normal;
+      animation: jump 2s ease 1.5s infinite normal; }
+      .scroll_container .scroll a svg:hover {
+        opacity: 0.5; }
+
+@keyframes jump {
+  0% {
+    transform: translateY(0); }
+  20% {
+    transform: translateY(0); }
+  40% {
+    transform: translateY(-30px); }
+  50% {
+    transform: translateY(0); }
+  60% {
+    transform: translateY(-15px); }
+  80% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(0); } }
+
+.cand_info h2 {
+  font-weight: normal;
+  font-size: 1.5em; }
+  .cand_info h2 span a:hover {
+    opacity: 0.5; }
+
+.map_title {
+  font-size: 2em;
+  font-weight: normal;
+  background-color: rgba(77, 76, 76, 0.5);
+  padding: 0.5em 2em; }
+
+.københavnbg {
+  background-image: url("kobenhavn.svg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat; }
+
+.lyngbybg {
+  background-image: url("lyngbytaarbaek.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat; }
+
+.våbs {
+  height: 15em;
+  width: auto; }
+
+.våbl {
+  height: 10em;
+  width: auto; }
+
+.right {
+  display: flex;
+  justify-content: flex-end; }
+
+iframe {
+  display: inline-block; }
+
+.svg {
+  position: relative;
+  display: inline-block; }
+  .svg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+
+.rowdirection {
+  display: flex; }
+
+@media screen and (max-width: 414px) {
+  #map .wrapper {
+    background-image: url(Tegn_res.png);
+    background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat; }
+  .scroll {
+    display: none; } }
+
+.space_top {
+  margin-top: 10em; }
+
+.mapsearch_title {
+  font-size: 1.5em;
+  font-weight: normal; }
+
+#knap {
+  font-family: "Trajan Pro";
+  background-color: rgba(77, 76, 76, 0.5);
+  font-size: 1em;
+  font-weight: normal;
+  text-decoration: none;
+  color: #f2f2f2;
+  border: none;
+  border-radius: 0;
+  margin-top: 1em; }
+  #knap:hover {
+    background-color: rgba(38, 38, 38, 0.5); }
+
+.indsendt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 2em;
+  background-color: rgba(77, 76, 76, 0.5); }
+
+.margin_none {
+  margin: 0; }
